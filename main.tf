@@ -22,6 +22,6 @@ provider "aws" {
   assume_role {
     role_arn     = var.ROLE_ARN
     external_id  = var.EXTERNAL_ID
-    session_name = "aws-haris-sandbox-cicd"     # repo-branch ; module-workspace
+    session_name = "aws-haris-sandbox-cicd" # repo-branch ; module-workspace
   }
 }
