@@ -1,5 +1,5 @@
 resource "aws_s3_bucket" "this" {
-  bucket_prefix = "haris-example-2-"
+  bucket_prefix = "example-bucket-2-"
   tags          = local.tags
 }
 
