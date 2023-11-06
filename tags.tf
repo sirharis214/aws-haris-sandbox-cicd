@@ -1,7 +1,7 @@
 locals {
   tags = {
-    Owner  = "haris-poweruser"
-    Repo   = "aws-haris-sandbox-cicd"
-    Branch = "dev"
+    module_name       = "aws-haris-sandbox-cicd"
+    owner             = "haris-poweruser"
+    trigger_on_branch = "dev"
   }
 }
