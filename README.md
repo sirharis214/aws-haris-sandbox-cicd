@@ -1,6 +1,8 @@
 # aws-haris-sandbox-cicd
 CI/CD. Creating infrastructure in AWS account aws-haris-sandbox via terraform and AWS Codebuild
 
+![overview](/docs/images/aws-haris-sandbox-cicd.drawio.png)
+
 # Disclaimer
 
 :grey_exclamation: This CI/CD is not ment to be a practical and ideal CI/CD setup. I have purposely broken this into 2 seperate GitHub repo's and 2 seperate AWS CodeBuild Projects, with one of them requiring to be triggered manually. The purpose of this CI/CD was to learn and document how AWS CodeBuild is used to pull code from GitHub and run terraform plan/apply on that code in AWS to create the infrastructure.
