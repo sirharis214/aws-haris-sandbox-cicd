@@ -5,7 +5,7 @@ CI/CD. Creating infrastructure in AWS account aws-haris-sandbox via terraform an
 
 # Disclaimer
 
-:grey_exclamation: This CI/CD is not ment to be a practical and ideal CI/CD setup. I have purposely broken this into 2 seperate GitHub repo's and 2 seperate AWS CodeBuild Projects, with one of them requiring to be triggered manually. The purpose of this CI/CD was to learn and document how AWS CodeBuild is used to pull code from GitHub and run terraform plan/apply on that code in AWS to create the infrastructure.
+:warning: This CI/CD is not ment to be a practical and ideal CI/CD setup. I have purposely broken this into 2 seperate GitHub repo's and 2 seperate AWS CodeBuild Projects, with one of them requiring to be triggered manually. The purpose of this CI/CD was to learn and document how AWS CodeBuild is used to pull code from GitHub and run terraform plan/apply on that code in AWS to create the infrastructure.
 
 The ideal CI/CD would be wrap these 2 CodeBuild projects within a AWS Codepipline and integrate notifications and manual terraform-plan validation which would automatically trigger the CodeBuild apply project. 
 
@@ -16,6 +16,19 @@ The ideal setup would also be to not have this repo `aws-haris-sandbox-cicd`, ra
 This repository will house all the module calls to create infrastructure in our AWS account. 
 
 We will create various GitHub repositories which will be terraform modules that create AWS resources. We will then call those modules in this repo to create an instance of those resources in our AWS account.
+
+## Example
+
+We have a module [secure-s3-bucket](https://github.com/sirharis214/secure-s3-bucket) which we can call to create a S3 bucket. Checkout the documentation in that repo for detail's on the required and optional variables.
+
+```hcl
+module "example_bucket" {
+  source       = "git::https://github.com/sirharis214/secure-s3-bucket?ref=v0.0.1"
+  bucket_name  = "haris-example-bucket"
+  project_tags = local.tags
+}
+
+```
 
 # CI/CD Infrastructure 
 
