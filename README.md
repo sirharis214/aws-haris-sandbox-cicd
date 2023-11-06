@@ -27,6 +27,7 @@ module "example_bucket" {
   bucket_name  = "haris-example-bucket"
   project_tags = local.tags
 }
+
 ```
 
 # CI/CD Infrastructure 
